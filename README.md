@@ -16,11 +16,10 @@ The notebook implements preprocessing and leakage audits, centralised and local 
 
 ## Repository contents
 
-- `notebooks/cross_platform_fl_evaluation.ipynb`: research pipeline (outputs cleared for publication).
+- `notebooks/code_ransomware.ipynb`: research pipeline (outputs cleared for publication).
 - `requirements.txt`: main Python dependencies, **not an environment lockfile**.
 - `DATASETS.md`: expected raw inputs and dataset-access cautions.
 - `REPRODUCIBILITY.md`: run procedure, thresholds, and verification checklist.
-- `CITATION.cff`: metadata template; fill in real authors before release.
 - `.gitignore`: excludes raw data, generated results, and local environments.
 
 ## Running
@@ -31,18 +30,23 @@ The notebook implements preprocessing and leakage audits, centralised and local 
 4. Place raw data in a local directory and set `RAW_DATA_DIR` to its absolute path, or attach datasets in Kaggle under `/kaggle/input`.
 5. Open the notebook and run cells in order. The notebook creates `working/` and `working/Full_Pipeline_Results/`.
 
-**Important:** This notebook was authored for a Kaggle-style environment and has not been rerun or fully validated as a clean-room reproduction from this package. Input discovery may require adjustment to the original dataset layouts. A smoke run with `QUICK=1` is **not** equivalent to the published full experiments.
+## Execution Environment
 
-## Evidence and interpretation
+The experimental implementation was originally developed in a Kaggle-based environment. Researchers reproducing the experiments in other environments may need to configure dataset paths and dependencies according to their local setup.
 
-The manuscript reports experiments across five seeds (2026–2030). Windows fixed-horizon detection uses separately validation-calibrated thresholds by horizon, while sequential first-alert timing uses one threshold calibrated at 30 s. Do not conflate these evaluation protocols. Windows pre-alert write volume is a **proxy**, not verified encrypted or prevented bytes.
+The repository includes a quick execution mode for preliminary functionality checks. Full experimental reproduction requires the complete datasets, original evaluation configurations, and all specified random seeds.
 
-Do not claim that results in the paper were independently reproduced from this package until a clean-environment rerun confirms them.
+The reported experimental results have not yet been independently verified through a clean-environment rerun.
+## Experimental Protocol and Reproducibility
+
+The experiments reported in the associated manuscript were conducted using five random seeds (2026–2030).
+
+For Windows early-stage ransomware detection, fixed-horizon evaluation uses separately calibrated validation thresholds for each observation horizon. Sequential first-alert analysis uses a single threshold calibrated at the 30-second horizon.
+
+Pre-alert write volume is used as a behavioral proxy and should not be interpreted as a direct measurement of encrypted or prevented data.
+
+The repository provides the research implementation and supporting documentation. Independent reproducibility of the reported results has not yet been verified through a clean-environment rerun.
 
 ## Availability and licence
 
-The authors retain copyright unless a licence is explicitly added. **No open-source licence is granted by this package.** Before publishing, choose and add an appropriate licence (e.g. MIT for original code) after checking third-party dependencies, rights, and institutional policies. Dataset licences are separate.
-
-## Contact
-
-Add corresponding-author contact information before public release.
+The source code is publicly available for research inspection. No licence for reuse, modification, or redistribution is granted at this time.
