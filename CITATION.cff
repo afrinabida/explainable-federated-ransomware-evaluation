@@ -1,0 +1,5 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the accompanying manuscript."
+title: "Audited Explainable Federated Learning for Cross-Platform Ransomware-Related Detection"
+type: software
+# Before release, add real authors, repository-code URL, version, and manuscript DOI (if available).

@@ -1,0 +1,13 @@
+# Main dependencies inferred from notebook imports; exact original versions unverified.
+numpy
+pandas
+scikit-learn
+xgboost
+scipy
+matplotlib
+shap
+tqdm
+openpyxl
+pyarrow
+jupyterlab
+ipykernel
